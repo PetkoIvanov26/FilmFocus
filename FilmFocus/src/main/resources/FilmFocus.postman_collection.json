@@ -1,0 +1,3877 @@
+{
+	"info": {
+		"_postman_id": "d97e18d8-9d0a-4626-a832-b7833a516021",
+		"name": "FilmFocus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21687999"
+	},
+	"item": [
+		{
+			"name": "CategoryModule",
+			"item": [
+				{
+					"name": "AddCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCategories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategoryByName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/categories?categoryName=Horror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "Horror"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/categories/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CinemaModule",
+			"item": [
+				{
+					"name": "AddCinema",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"Pirotska 13\",\r\n    \"city\":\"Sofia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cinemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCinemas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/cinemas?city=Sofia&address=Pirotska 13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Sofia"
+								},
+								{
+									"key": "address",
+									"value": "Pirotska 13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCinema",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"Pirotska 13\",\r\n    \"city\":\"Sofia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cinemas/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCinema",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/cinemas/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DiscountModule",
+			"item": [
+				{
+					"name": "AddDiscount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"Military\",\r\n   \"code\":\"9999\",\r\n   \"percentage\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/discounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDiscounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/discounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDiscountByType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/discounts?type=Military",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discounts"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Military"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDiscount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"Military\",\r\n   \"code\":\"9999\",\r\n   \"percentage\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/discounts/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteDiscount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/discounts/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HallModule",
+			"item": [
+				{
+					"name": "AddHall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"capacity\": 100,\r\n    \"cinemaId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/halls",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"halls"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetHallsByCinemaId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemas/1/halls",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1",
+								"halls"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateHall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"capacity\": 100,\r\n    \"cinemaId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/halls/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"halls",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteHall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/halls/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"halls",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ItemModule",
+			"item": [
+				{
+					"name": "AddItem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Coca-Cola\",\r\n  \"price\": 2.5,\r\n  \"quantity\": 77\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAlltems",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetItemByName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/items?itemName=Coca-Cola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "itemName",
+									"value": "Coca-Cola"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetItemsByQuantity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/items?quantity=10&isBelow=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "10"
+								},
+								{
+									"key": "isBelow",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateItem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"name\": \"Popcorn\",\r\n        \"price\": 3.5,\r\n        \"quantity\": 66\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteItem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/items/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MovieModule",
+			"item": [
+				{
+					"name": "AddMovie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Fast X\",\r\n    \"description\": \"Very interesting plot\",\r\n    \"releaseDate\": \"2023-09-06\",\r\n    \"runtime\": \"PT2H21M\",\r\n    \"categoryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMoviesByTitle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/movies?title=Fast X&minimalRating=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Fast X"
+								},
+								{
+									"key": "minimalRating",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMoviesByReleaseDate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/movies?release=2022-10-10&rating=3&isAfter=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "release",
+									"value": "2022-10-10"
+								},
+								{
+									"key": "rating",
+									"value": "3"
+								},
+								{
+									"key": "isAfter",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMoviesByMinRating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/movies?minRating=4.4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "minRating",
+									"value": "4.4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMoviesByCategoryId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/categories/1/movies?minRating=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "minRating",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMoviesByImdb",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/movies?imdb=top",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "imdb",
+									"value": "top"
+								},
+								{
+									"key": "imdb",
+									"value": "box office",
+									"disabled": true
+								},
+								{
+									"key": "imdb",
+									"value": "coming soon",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMovie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Fast X\",\r\n    \"description\": \"Very interesting plot\",\r\n    \"releaseDate\": \"2023-06-06\",\r\n    \"runtime\": \"PT2H21M\",\r\n    \"categoryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMovie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderModule",
+			"item": [
+				{
+					"name": "AddOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"ticketsIds\": [1],\r\n  \"itemsIds\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MakeReservationWithUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n    \"projectionId\": 1\r\n    },\r\n    {\r\n    \"projectionId\": 2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/1/orders?discountCode=9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "discountCode",
+									"value": "9999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrdersByUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"ticketsIds\": [1],\r\n  \"itemsIds\": [1, 2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramModule",
+			"item": [
+				{
+					"name": "AddProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"programDate\":\"2023-07-07\",\r\n   \"cinemaId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/programs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProgramsByDate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/programs?date=2023-07-07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programs"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2023-07-07"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProgramsByCinemaId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/cinemas/1/programs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1",
+								"programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"programDate\":\"2023-07-07\",\r\n   \"cinemaId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/programs/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programs",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/programs/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programs",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProjectionModule",
+			"item": [
+				{
+					"name": "AddProjection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "e88ee8d3-264c-436d-a25b-f3ae52257f95",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 33.50,\r\n    \"hallId\": 1,\r\n    \"programId\": 1,\r\n    \"movieId\":1,\r\n    \"startTime\": \"20:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/projections",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"projections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProjectionsByProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/programs/1/projections",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programs",
+								"1",
+								"projections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProjectionsByMovieId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/movies/1/projections",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"projections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProjectionsByStartTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "d71e77f9-6117-4cf0-a19a-436f855501d5",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/projections?startTime=19:00:00&isBefore=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"projections"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "19:00:00"
+								},
+								{
+									"key": "isBefore",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProjection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 33.50,\r\n    \"hallId\": 1,\r\n    \"programId\": 1,\r\n    \"movieId\":1,\r\n    \"startTime\": \"20:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/projections/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"projections",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProjection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/projections/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"projections",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RoleModule",
+			"item": [
+				{
+					"name": "AddRole",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRoles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoleByName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roles?name=user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRole",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRole",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roles/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ReportModule",
+			"item": [
+				{
+					"name": "IncomeSubmodule",
+					"item": [
+						{
+							"name": "GetAllIncomesByCinemaId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/cinemas/1/incomes?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"cinemas",
+										"1",
+										"incomes"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllIncomesByHallId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/halls/1/incomes?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"halls",
+										"1",
+										"incomes"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllIncomesByItemId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/items/1/incomes?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"items",
+										"1",
+										"incomes"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllIncomesByMovieId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/movies/1/incomes?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"movies",
+										"1",
+										"incomes"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllIncomesByUserId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/users/1/incomes?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"users",
+										"1",
+										"incomes"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "StatisticsSubmodule",
+					"item": [
+						{
+							"name": "GetPurchasedTicketsCountByMovieCategoryId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/movies/categories/1/tickets-count?startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"movies",
+										"categories",
+										"1",
+										"tickets-count"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPurchasedTicketsCountByMovieTitle",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/movies/tickets-count?title=Fast X&startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"movies",
+										"tickets-count"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Fast X"
+										},
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPurchasedItemsCountByItemName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+											"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{xsrf-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/reports/items/items-count?name=Coca-Cola&startDate=2000-01-01&endDate=2030-01-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"items",
+										"items-count"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Coca-Cola"
+										},
+										{
+											"key": "startDate",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2030-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ReviewModule",
+			"item": [
+				{
+					"name": "AddCinemaReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":\"3.5\",\r\n    \"reviewText\":\"The cinema is great\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cinemas/1/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMovieReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":\"3.3\",\r\n    \"reviewText\":\"The movie is great\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/1/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewsByMovieId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/movies/1/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewsByCinemaId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/cinemas/1/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemas",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieReviewsByUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/users/1/movies/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"movies",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCinemaReviewsByUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/users/1/cinemas/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"cinemas",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":\"4.4\",\r\n    \"reviewText\":\"A review edit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/reviews/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/reviews/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TicketModule",
+			"item": [
+				{
+					"name": "AddTicket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTicketsByProjectionId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/projections/1/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"projections",
+								"1",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserModule",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"username\": \"s1mple\",\r\n        \"password\": \"12345678\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"username\": \"madqci\",\r\n        \"password\": \"12345678\",\r\n        \"email\": \"madqci@scalefocus.com\",\r\n        \"firstName\": \"Petkan\",\r\n        \"lastName\": \"Draganov\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterUserByAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"username\": \"s1mple\",\r\n        \"password\": \"12345678\",\r\n        \"email\": \"s1mple@scalefocus.com\",\r\n        \"firstName\": \"Petkan\",\r\n        \"lastName\": \"Draganov\",\r\n        \"roleNames\":[\r\n            \"ADMIN\"\r\n                    ]\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PasswordRecovery",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/password-recovery?username=s1mple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"password-recovery"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "s1mple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByUsername",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users?username=s1mple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "s1mple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByEmail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users?email=s1mple@scalefocus.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "s1mple@scalefocus.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersByRoleName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users?roleName=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "roleName",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersByJoinDate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users?joinDate=2020-06-30&isBefore=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "joinDate",
+									"value": "2020-06-30"
+								},
+								{
+									"key": "isBefore",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"username\": \"s1mple\",\r\n        \"password\": \"12345678\",\r\n        \"email\": \"sssr@scalefocus.com\",\r\n        \"firstName\": \"Petkan\",\r\n        \"lastName\": \"Draganov\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserByAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"username\": \"madqci\",\r\n        \"password\": \"12345678\",\r\n        \"email\": \"mad@scalefocus.com\",\r\n        \"firstName\": \"Petkan\",\r\n        \"lastName\": \"Draganov\",\r\n        \"roleNames\":[\r\n            \"USER\"\r\n        ]\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admins/2?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"2"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var xsrfCookie=postman.getResponseCookie(\"XSRF-TOKEN\");\r",
+									"postman.setEnvironmentVariable(\"xsrf-token\", xsrfCookie.value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{xsrf-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/1?returnOld=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							],
+							"query": [
+								{
+									"key": "returnOld",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

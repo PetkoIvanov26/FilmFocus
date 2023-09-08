@@ -1,0 +1,29 @@
+jwt:
+  secret: f232@Gg2f32HJ*_56538fj2W@FJ@fmf9F@2ri92IT2tjf$@@fev
+
+spring:
+  profiles:
+    active:
+      postgre
+  jpa:
+    properties:
+      hibernate:
+        default_schema: filmfocus
+    hibernate:
+      ddl-auto: none
+
+logging:
+  file:
+    name: logs/log.log
+  pattern:
+    file: '%d{dd-MM-yyyy HH:mm:ss} [%thread] %-5level %logger{36}.%M -%msg%n'
+  level:
+    root: INFO
+
+api:
+  key: 04b99675b28d5214b162854beed37c40
+  secret: 903adceda82aea120f4afefb664b8e4c
+
+imdb:
+  key: k_qtxnc3ev
+  url: https://imdb-api.com/en/API/
